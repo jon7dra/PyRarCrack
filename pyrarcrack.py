@@ -7,6 +7,9 @@ Based on:
 http://stackoverflow.com/questions/11747254/python-brute-force-algorithm
 http://www.enigmagroup.org/code/view/python/168-Rar-password-cracker
 http://rarcrack.sourceforge.net/
+
+Mod by P@p@C0d€ur:
+https://diagrepaauto.fr
 """
 from argparse import ArgumentParser
 from itertools import chain, product
