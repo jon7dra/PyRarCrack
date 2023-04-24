@@ -19,7 +19,7 @@ chars = (
     printable
     + 'ÁáÂâàÀÃãÅåÄäÆæÉéÊêÈèËëÐðÍíÎîÌìÏïÓóÒòÔôØøÕõÖöÚúÛûÙùÜüÇçÑñÝý®©Þþß'
 )
-special_chars = "();<>`|~\"&\'}]"
+special_chars = "&~#'{([-|`_^@)]=}+%µ*!§:/\/;.,²?"
 
 parser = ArgumentParser(description='Python combination generator to unrar')
 parser.add_argument(
@@ -82,8 +82,7 @@ if __name__ == '__main__':
         formated_combination = format(combination)
 
         if args.verbose:
-            print(f'Trying: {combination}')
-
+            print(f'Essaie MDP: {combination}')
         cmd = Popen(
             f'unrar t -p{formated_combination} {args.file}'.split(),
             stdout=PIPE,
@@ -92,6 +91,6 @@ if __name__ == '__main__':
         out, err = cmd.communicate()
 
         if 'All OK' in out.decode():
-            print(f'Password found: {combination}')
+            print(f'Mot de passe découvert: {combination}')
             print(f'Time: {time() - start_time}')
             exit()
